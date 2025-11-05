@@ -1,5 +1,61 @@
 # 更新日志
 
+## v1.2.1 (2025-11-05)
+
+### 🎯 专注 Vercel 部署
+- 🗑️ **移除其他部署平台配置**
+  - 删除 `netlify.toml`
+  - 删除 `DEPLOYMENT.md` 和 `DEPLOY_CN.md`
+  - 统一使用 Vercel 部署
+
+### 📝 文档优化
+- ✨ 新增 `DEPLOY.md` - 专门的 Vercel 部署指南
+- 🔧 新增 `.vercelignore` - Vercel 忽略文件配置
+- 📚 更新所有文档的部署链接指向 Vercel
+- 🎯 优化 `vercel.json` 配置（添加缓存头和 Clean URLs）
+
+### 🔧 配置改进
+- 优化 Vercel 缓存策略
+- 添加静态资源长期缓存
+- 启用 Clean URLs
+
+---
+
+## v1.2.0 (2025-11-05)
+
+### ⚡ 构建系统升级
+- 🚀 **集成 Vite 构建工具**
+  - 极速开发服务器启动（< 1秒）
+  - 热模块替换（HMR）支持
+  - 优化的生产构建
+  - 自动代码分割
+  - Tree-shaking 优化
+
+### 📦 新增文件
+- `vite.config.js` - Vite 配置文件
+- `VITE.md` - Vite 使用和部署完整指南
+- `vercel.json` - Vercel 部署配置
+- `netlify.toml` - Netlify 部署配置
+- `env.example` - 环境变量示例
+
+### 🔧 配置改进
+- 更新 `package.json` 使用 Vite 脚本
+- 优化 `.gitignore` 忽略构建产物
+- 多页面应用配置（index/models/terms）
+
+### 📝 文档更新
+- 更新 `README.md` 添加 Vite 使用说明
+- 更新 `QUICKSTART.md` 反映新的构建流程
+- 更新 `DEPLOYMENT.md` 添加 Vite 部署方式
+
+### 🎯 开发体验提升
+- `npm run dev` - 启动开发服务器
+- `npm run build` - 构建生产版本
+- `npm run preview` - 预览生产构建
+- 支持环境变量配置
+
+---
+
 ## v1.1.0 (2025-11-05)
 
 ### ✨ 新功能
@@ -69,13 +125,15 @@
 
 ## 开发计划
 
-### v1.2.0 (计划中)
-- [ ] 添加更多语言支持（日文、韩文）
+### v1.3.0 (计划中)
+- [ ] 添加更多语言支持（日文、韩文、简体中文）
 - [ ] 深色/浅色主题切换
 - [ ] 用户评价/推荐区域
 - [ ] 更多支付方式集成
+- [ ] PWA 支持
+- [ ] 图片懒加载优化
 
-### v1.3.0 (计划中)
+### v1.4.0 (计划中)
 - [ ] 后台管理系统
 - [ ] 用户登录功能
 - [ ] 订单管理

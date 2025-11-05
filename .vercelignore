@@ -1,0 +1,33 @@
+# Vercel 忽略文件
+
+# 文档和说明
+*.md
+!README.md
+
+# 开发文件
+.vscode/
+.idea/
+
+# 测试文件
+*.test.js
+*.spec.js
+
+# 示例文件
+*.example.*
+env.example
+
+# Git 文件
+.git/
+.gitignore
+.gitattributes
+
+# 依赖（Vercel 会重新安装）
+node_modules/
+
+# 本地配置
+*.local
+.env.local
+
+# 其他构建工具配置
+netlify.toml
+

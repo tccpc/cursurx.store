@@ -1,12 +1,13 @@
 {
   "name": "cursurx-store",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Cursor X - Unlimited Claude & GPT in Cursor",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "start": "npx http-server -p 8000 -o",
-    "dev": "npx http-server -p 8000 -o",
-    "serve": "npx http-server -p 8000"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite"
   },
   "keywords": [
     "cursor",
@@ -17,6 +18,9 @@
   ],
   "author": "Cursor X Team",
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "terser": "^5.31.0"
+  }
 }
 

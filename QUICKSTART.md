@@ -2,9 +2,15 @@
 
 欢迎使用 Cursor X 网站！这是一个 5 分钟快速配置指南。
 
-## ⚡ 3 步快速上线
+## ⚡ 4 步快速上线
 
-### 第 1 步：编辑配置文件（2分钟）
+### 第 1 步：安装依赖（1分钟）
+
+```bash
+npm install
+```
+
+### 第 2 步：编辑配置文件（2分钟）
 
 打开 `config.js`，修改以下关键配置：
 
@@ -23,31 +29,48 @@ payment: {
 }
 ```
 
-### 第 2 步：本地测试（1分钟）
+### 第 3 步：本地测试（1分钟）
 
 ```bash
-# 快速启动
-npm start
+# 使用 Vite（推荐）
+npm run dev
 
 # 或使用 Python
 python -m http.server 8000
 ```
 
-访问 `http://localhost:8000` 查看效果 ✨
+访问 `http://localhost:3000` （Vite）或 `http://localhost:8000` （Python）查看效果 ✨
 
-### 第 3 步：一键部署（2分钟）
+### 第 4 步：部署到 Vercel（2分钟）
 
-#### 最简单：使用 Vercel
+**推荐方式：Git 自动部署**
 
-1. 访问 [vercel.com](https://vercel.com)
-2. 拖放项目文件夹
-3. 完成！🎉
+```bash
+# 1. 推送到 GitHub
+git init
+git add .
+git commit -m "Deploy Cursor X"
+git remote add origin https://github.com/你的用户名/cursurx.store.git
+git push -u origin main
 
-#### 或使用 Netlify
+# 2. 访问 vercel.com
+# 3. 导入仓库
+# 4. 自动部署！🎉
+```
 
-1. 访问 [netlify.com](https://netlify.com)  
-2. 拖放项目文件夹
-3. 完成！🎉
+**或使用 CLI（需要代理）：**
+
+```bash
+# 设置代理
+export HTTP_PROXY=http://127.0.0.1:7890
+export HTTPS_PROXY=http://127.0.0.1:7890
+
+# 部署
+npm i -g vercel
+vercel --prod
+```
+
+详细步骤查看 [DEPLOY.md](DEPLOY.md)
 
 ## 📝 必改配置清单
 
@@ -146,7 +169,7 @@ A: 已支持中英文切换！点击右上角的 EN/繁中 按钮即可切换。
 
 - ✅ 完成基础配置
 - 📖 阅读 [完整文档](README.md)
-- 🚀 查看 [部署指南](DEPLOYMENT.md)
+- 🚀 查看 [Vercel 部署指南](DEPLOY.md)
 - 🌍 了解 [多语言功能](LANGUAGE.md)
 - 🎨 自定义样式和内容
 

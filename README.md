@@ -8,6 +8,7 @@
 - 🎨 精美的渐变色和动画效果
 - 📱 完全移动端适配
 - 🌍 **中英文切换支持**（自动保存语言偏好）
+- ⚡ **Vite 构建**（极速开发，优化生产）
 - ⚙️ 灵活的配置系统
 - 🔧 易于自定义和维护
 
@@ -23,11 +24,15 @@ cursurx.store/
 ├── models.html         # 支持的AI模型页面
 ├── terms.html          # 服务条款页面
 ├── README.md           # 本文档
-├── DEPLOYMENT.md       # 部署指南
+├── DEPLOY.md           # Vercel 部署指南
+├── VITE.md             # Vite 构建指南
 ├── QUICKSTART.md       # 快速入门
 ├── LANGUAGE.md         # 多语言使用指南
 ├── TESTING.md          # 功能测试清单
-└── CHANGELOG.md        # 更新日志
+├── INSTALL.md          # 安装指南
+├── CHANGELOG.md        # 更新日志
+├── vite.config.js      # Vite 配置
+└── vercel.json         # Vercel 部署配置
 ```
 
 ## ⚙️ 配置说明
@@ -143,34 +148,65 @@ payment: {
 }
 ```
 
-### 3. 本地预览
+### 3. 安装依赖
 
-#### 方式 1: 使用 npm（推荐）
 ```bash
-npm start
+npm install
 ```
-自动打开浏览器访问 `http://localhost:8000`
 
-#### 方式 2: 使用 Python
+### 4. 本地开发
+
 ```bash
+npm run dev
+```
+
+Vite 开发服务器将在 `http://localhost:3000` 启动，支持热模块替换（HMR）。
+
+**或使用传统方式：**
+```bash
+# 使用 Python
 python -m http.server 8000
+
+# 使用 Node.js
+npx http-server -p 8000
 ```
 
-#### 方式 3: 使用 Node.js
+### 5. 构建生产版本
+
 ```bash
-npx http-server -p 8000 -o
+npm run build
 ```
 
-### 4. 部署到生产环境
+构建产物将输出到 `dist/` 目录。
 
-详细部署指南请查看 [DEPLOYMENT.md](DEPLOYMENT.md)
+### 6. 预览生产构建
 
-**快速部署选项：**
-- **Vercel**: 拖放文件夹或使用 Git 集成 ⚡
-- **Netlify**: 拖放文件夹或使用 Git 集成 ⚡
-- **GitHub Pages**: 推送到 GitHub 仓库 📦
-- **Cloudflare Pages**: 连接 Git 仓库 🌐
-- **传统服务器**: 上传所有文件到 Web 目录 🖥️
+```bash
+npm run preview
+```
+
+### 7. 部署到 Vercel
+
+详细部署指南请查看：
+- [DEPLOY.md](DEPLOY.md) - Vercel 部署完整指南
+- [VITE.md](VITE.md) - Vite 构建说明
+
+**推荐方式：通过 GitHub 自动部署**
+
+```bash
+# 1. 推送到 GitHub
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/你的用户名/cursurx.store.git
+git push -u origin main
+
+# 2. 访问 vercel.com
+# 3. 导入 GitHub 仓库
+# 4. 自动部署完成！
+```
+
+每次推送代码自动部署 ⚡
 
 ## 🎨 自定义样式
 
